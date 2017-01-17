@@ -1,0 +1,28 @@
+# Embedding Bokeh App into Flask App
+
+Flask App and Bokeh App are coded at separeted python scripts and they have to be executed as independent processes like start.sh shell script.
+
+I got **sliders.py** and **fourier_animated.py** from [Bokeh 0.12.4](https://github.com/bokeh/bokeh/tree/0.12.4/examples/app).
+
+
+## Instructions
+
+Create a conda environment with Flask and Bokeh:
+
+    $ conda create --name flask_bokeh python=2.7 flask=0.12 bokeh=0.12.4
+
+Clone this repo:
+
+    $ git clone this_repo.git
+
+In one terminal, run shell script:
+
+    $ cd this_repo
+    $ source start.sh
+
+Go to http://localhost:8080/
+
+
+## Obs
+
+Use [Git Bash](https://git-for-windows.github.io/) on Windows to be able to execute shell code.
