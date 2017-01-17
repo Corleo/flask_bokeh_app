@@ -1,18 +1,19 @@
 from tornado.ioloop import IOLoop
 
 from bokeh.application import Application
-from bokeh.application.handlers import ScriptHandler
+from bokeh.application.handlers import ScriptHandler, FunctionHandler
 from bokeh.server.server import Server
-from bokeh.util.browser import view
 
+from bokeh_scripts.slider_func import _slider_func
 
 def _bokeh_init():
     io_loop = IOLoop.current()
 
     server = Server(
         {
-            '/_sliders': Application(ScriptHandler(filename='bokeh/sliders.py')),
-            '/_fourier':   Application(ScriptHandler(filename='bokeh/fourier_animated.py'))
+            '/_func':    Application(FunctionHandler(_slider_func)),
+            '/_sliders': Application(ScriptHandler(filename='bokeh_scripts/sliders.py')),
+            '/_fourier': Application(ScriptHandler(filename='bokeh_scripts/fourier_animated.py'))
         },
         io_loop=io_loop,
         allow_websocket_origin=["localhost:8080"]

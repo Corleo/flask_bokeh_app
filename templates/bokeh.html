@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<body>
-    <h1>Bokeh app</h1>
+{% extends "index.html" %}
 
-    <a href="home" title="">go home</a>
-    <a href="slider" title="">go slider</a>
-    <a href="fourier" title="">go fourier</a>
-
+{% block content %}
     <div class="bokeh_div">
         {{ bokeh_script|safe }}
     </div>
-
-</body>
-</html>
+{% endblock %}
